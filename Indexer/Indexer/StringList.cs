@@ -1,5 +1,3 @@
-namespace Indexer;
-
 public class StringList
 {
     private Node? head;
@@ -29,14 +27,14 @@ public class StringList
     {
         get
         {
-            if (pos < 0 || pos >= count)
+            if (pos < 0 || pos >= count || head == null)
             {
                 throw new IndexOutOfRangeException();
             }
 
-            Node current = head;
+            Node? current = head;
 
-            for (int i = 0; i < pos; i++)
+            for (int i = 0; current.Next != null && i < pos; i++)
             {
                 current = current.Next;
             }
@@ -52,14 +50,14 @@ public class StringList
             return "";
         }
 
-        string result = "";
+        string result = head.Data + "\n";
 
         Node current = head;
 
-        while (current != null)
+        while (current.Next != null)
         {
-            result += current.Data + "\n";
             current = current.Next;
+            result += current.Data + "\n";
         }
 
         return result;
