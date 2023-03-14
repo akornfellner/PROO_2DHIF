@@ -5,9 +5,9 @@
 
 target/
 Cargo.lock
-
 .vscode
 justfile
+input
 
 # User-specific files
 *.rsuser
