@@ -1,3 +1,6 @@
+/// <summary>
+/// Represents a time in the format of HH:MM:SS
+/// </summary>
 public class Time : IComparable<Time>
 {
     public int Hour { get; set; }
@@ -12,6 +15,9 @@ public class Time : IComparable<Time>
         Second = int.Parse(time[2]);
     }
 
+    /// <summary>
+    /// Converts the time to seconds
+    /// </summary>
     public int ToSeconds()
     {
         return Hour * 3600 + Minute * 60 + Second;

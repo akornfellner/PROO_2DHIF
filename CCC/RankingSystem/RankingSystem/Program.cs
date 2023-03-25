@@ -4,8 +4,10 @@ string[] parts = input.Split(' ');
 
 int x = int.Parse(parts[1]);
 
+// Create a list of submissions
 List<Submission> submissions = new List<Submission>();
 
+// Add all submissions to the list
 for (int i = 3; i < parts.Length; i += 4)
 {
     submissions.Add(new Submission(int.Parse(parts[i]), parts[i + 1], parts[i + 2] == "correct", int.Parse(parts[i + 3])));
