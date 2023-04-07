@@ -15,7 +15,9 @@ MyList<Person> people = new MyList<Person>();
 people.Add(new Person("John", 20));
 people.Add(new Person("Jane", 30));
 
-foreach (Person person in people)
+IEnumerator<Person> enumerator = people.GetEnumerator();
+
+while (enumerator.MoveNext())
 {
-    Console.WriteLine(person);
+    Console.WriteLine(enumerator.Current);
 }
